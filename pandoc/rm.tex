@@ -1,6 +1,8 @@
 \documentclass[$if(fontsize)$$fontsize$,$endif$$if(lang)$$lang$,$endif$$if(papersize)$$papersize$,$endif$]{$documentclass$}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
+\usepackage{color}
+\definecolor{light-gray}{gray}{0.90}
 \usepackage{amssymb,amsmath}
 \usepackage{ifxetex,ifluatex}
 \usepackage{fixltx2e} % provides \textsubscript
@@ -48,6 +50,10 @@ $endif$
 $endif$
 $if(listings)$
 \usepackage{listings}
+\lstset{breaklines=true,breakindent=0pt,xleftmargin=5pt,xrightmargin=5pt,lineskip=5pt} 
+\lstset{backgroundcolor=\color{light-gray}}
+\lstset{basicstyle=\small\ttfamily}
+\newcommand{\inlineCode}{\lstinline[basicstyle=\normalsize\ttfamily]}
 $endif$
 $if(lhs)$
 \lstnewenvironment{code}{\lstset{language=Haskell,basicstyle=\small\ttfamily}}{}
@@ -121,13 +127,13 @@ $endif$
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhf{}
-\lhead{Ref: $rmref$}
+\lhead{$subtitle$}
 \chead{}
 \rhead{\setlength{\unitlength}{1mm}
   \begin{picture}(46,0)
     \put(0,0){\includegraphics[scale=0.4]{rm-logo.eps}}
   \end{picture}}
-\lfoot{$subtitle$}
+\lfoot{Ref: $rmref$}
 \cfoot{}
 \rfoot{Page \thepage\ of \pageref{LastPage}}
 \renewcommand{\headrulewidth}{0.2pt}
@@ -159,31 +165,12 @@ $if(toc)$
 \hypersetup{linkcolor=black}
 \setcounter{tocdepth}{$toc-depth$}
 \tableofcontents
-\listoftables
-\listoffigures
 \newpage
 }
 $endif$
 
 $body$
 
-$if(natbib)$
-$if(biblio-files)$
-$if(biblio-title)$
-$if(book-class)$
-\renewcommand\bibname{$biblio-title$}
-$else$
-\renewcommand\refname{$biblio-title$}
-$endif$
-$endif$
-\bibliography{$biblio-files$}
-
-$endif$
-$endif$
-$if(biblatex)$
-\printbibliography$if(biblio-title)$[title=$biblio-title$]$endif$
-
-$endif$
 $for(include-after)$
 $include-after$
 
