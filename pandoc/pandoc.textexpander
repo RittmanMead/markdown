@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>groupInfo</key>
+	<dict>
+		<key>expandAfterMode</key>
+		<integer>0</integer>
+		<key>groupName</key>
+		<string>Pandoc</string>
+	</dict>
+	<key>snippetsTE2</key>
+	<array>
+		<dict>
+			<key>abbreviation</key>
+			<string>`pdpdf</string>
+			<key>abbreviationMode</key>
+			<integer>0</integer>
+			<key>creationDate</key>
+			<date>2013-05-29T13:29:06Z</date>
+			<key>flags</key>
+			<integer>0</integer>
+			<key>label</key>
+			<string>Pandoc convert to PDF</string>
+			<key>lastUsed</key>
+			<date>2013-06-07T08:15:46Z</date>
+			<key>modificationDate</key>
+			<date>2013-06-07T08:56:08Z</date>
+			<key>plainText</key>
+			<string>pushd ~/.pandoc/
+pandoc -N --template=rm.tex --variable monofont=Menlo --variable mainfont=Helvetica --variable sansfont=Arial --variable fontsize=12pt  --variable date="%snippet:`date% %snippet:`time%" --variable author="RMC / %filltext:name=Author Name:default=Robin Moffatt%" --variable title="%filltext:name=Title:width=60%" --variable subtitle="%filltext:name=Page header repeating title:width=60%" --variable rmref="%filltext:name=Doc reference%" %fillpopup:name=Table of Contents?:default=--toc:% --listings --variable geometry:margin="%filltext:name=Page Margin:default=1in:width=6%" --latex-engine=xelatex -o %filltext:name=Output file:default=~/Desktop/output_doc.pdf:width=40% "%filltext:name=Input:default=~/Dropbox/shared/RM/input.md:width=60%" 
+popd
+</string>
+			<key>snippetType</key>
+			<integer>0</integer>
+			<key>useCount</key>
+			<integer>0</integer>
+			<key>uuidString</key>
+			<string>A7F4B01A-0013-4883-81FC-1E5C975B8CE7</string>
+		</dict>
+		<dict>
+			<key>abbreviation</key>
+			<string>`pddocx</string>
+			<key>abbreviationMode</key>
+			<integer>0</integer>
+			<key>creationDate</key>
+			<date>2013-05-29T13:28:20Z</date>
+			<key>flags</key>
+			<integer>0</integer>
+			<key>label</key>
+			<string>Pandoc convert to DOCX</string>
+			<key>lastUsed</key>
+			<date>2013-06-07T08:55:50Z</date>
+			<key>modificationDate</key>
+			<date>2013-06-07T08:55:12Z</date>
+			<key>plainText</key>
+			<string>pushd ~/.pandoc/
+pandoc -f markdown -t docx --reference-docx=pandoc-template.docx -o %filltext:name=Output file:default=~/Desktop/output_doc.docx:width=40% "%filltext:name=Input:default=~/Dropbox/shared/RM/input.md:width=60%" 
+popd
+</string>
+			<key>snippetType</key>
+			<integer>0</integer>
+			<key>useCount</key>
+			<integer>0</integer>
+			<key>uuidString</key>
+			<string>CB30A761-2E46-478F-ADB3-44CD0435DF9E</string>
+		</dict>
+	</array>
+</dict>
+</plist>
